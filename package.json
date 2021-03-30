@@ -1,0 +1,32 @@
+{
+  "name": "ebenezer",
+  "version": "1.0.0",
+  "description": "Website for Iglesia de Dios Ebenezer based in Snellville, GA",
+  "main": "lib/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "flow": "flow",
+    "build": "babel src/ -d lib/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uuilmer/ebenezer.git"
+  },
+  "author": "Wilmer Alexander Hernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uuilmer/ebenezer/issues"
+  },
+  "homepage": "https://github.com/uuilmer/ebenezer#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-flow": "^7.13.13",
+    "flow-bin": "^0.147.0"
+  }
+}
