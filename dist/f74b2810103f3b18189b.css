@@ -1,0 +1,54 @@
+#desktop_home_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+#mobile_home_background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#tab_manager {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #desktop_home_background {
+    width: 100%;
+    height: auto;
+  }
+  #mobile_home_background {
+    display: none;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #desktop_home_background {
+    width: auto;
+    height: 100%;
+  }
+  #mobile_home_background {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  #desktop_home_background {
+    display: none;
+  }
+  #mobile_home_background {
+    display: block;
+  }
+}
