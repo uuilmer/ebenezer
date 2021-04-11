@@ -6,7 +6,7 @@ const path = require("path");
 app.use(express.static(path.join(__dirname, "../dist")));
 app.use("/media/", express.static(path.join(__dirname, "../public/media")));
 
-app.get("/", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../dist", "home.html"));
 });
 

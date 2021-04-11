@@ -37,27 +37,32 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var PAGE_NAMES = ["Casa", "Calendario", "EnVivo", "Contactenos"];
+var PAGE_NAMES = ["Casa", "Calendario", "Vivo", "Contactenos"];
+var PAGES = new Map([["Casa", /*#__PURE__*/_react["default"].createElement(_HomePage["default"], null)], ["Calendario", null], ["Vivo", null], ["Contactenos", null]]);
 
 var PageManager = /*#__PURE__*/function (_React$Component) {
   _inherits(PageManager, _React$Component);
 
   var _super = _createSuper(PageManager);
 
-  function PageManager() {
+  function PageManager(props) {
     var _this;
 
     _classCallCheck(this, PageManager);
 
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
+    _this = _super.call(this, props);
 
     _defineProperty(_assertThisInitialized(_this), "state", {
       page: "Casa"
     });
+
+    if (PAGE_NAMES.includes(window.location.pathname.split("/")[1])) {
+      _this.state = {
+        page: window.location.pathname.split("/")[1]
+      };
+    } else {
+      window.history.pushState("", "", "/Casa");
+    }
 
     return _this;
   }
@@ -67,8 +72,7 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var pageContent = /*#__PURE__*/_react["default"].createElement(_HomePage["default"], null);
-
+      var pageContent = PAGES.get(this.state.page);
       return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
         id: "tab_manager"
       }, /*#__PURE__*/_react["default"].createElement("nav", {
@@ -102,7 +106,14 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
           key: page
         }, /*#__PURE__*/_react["default"].createElement("a", {
           className: navclassName,
-          href: "#"
+          href: "#",
+          onClick: function onClick() {
+            window.history.pushState("", "", "/" + page);
+
+            _this2.setState({
+              page: page
+            });
+          }
         }, page));
       })))))), pageContent);
     }
