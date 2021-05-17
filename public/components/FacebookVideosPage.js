@@ -55,7 +55,7 @@ function FacebookVideosPage() {
       return;
     }
 
-    var tokenUrl = "https://graph.facebook.com/v10.0/oauth/access_token?redirect_uri=http%3A%2F%2Flocalhost%3A3000%2FVivo&client_id=500102691353311&client_secret=de6da569969ab8ef4e700be28cf78a9a&code=" + userCode;
+    var tokenUrl = "https://graph.facebook.com/v10.0/oauth/access_token?redirect_uri=https%3A%2F%2Febenezer.herokuapp.com%2FVivo&client_id=500102691353311&client_secret=de6da569969ab8ef4e700be28cf78a9a&code=" + userCode;
     fetch(tokenUrl).then(function (response) {
       return response.json();
     }).then(function (data) {
@@ -68,7 +68,7 @@ function FacebookVideosPage() {
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, !userCode && /*#__PURE__*/_react["default"].createElement("button", {
     onClick: function onClick() {
-      window.location.href = "https://facebook.com/v10.0/dialog/oauth?client_id=500102691353311&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2FVivo&state=23443";
+      window.location.href = "https://facebook.com/v10.0/dialog/oauth?client_id=500102691353311&redirect_uri=https%3A%2F%2Febenezer.herokuapp.com%2FVivo&state=23443";
     }
   }, "Click"), videos && videos.map(function (video, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
