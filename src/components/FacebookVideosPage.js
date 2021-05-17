@@ -28,7 +28,7 @@ export default function FacebookVideosPage() {
       return;
     }
     let tokenUrl =
-      "https://graph.facebook.com/v10.0/oauth/access_token?redirect_uri=http%3A%2F%2Flocalhost%3A3000%2FVivo&client_id=500102691353311&client_secret=de6da569969ab8ef4e700be28cf78a9a&code=" +
+      "https://graph.facebook.com/v10.0/oauth/access_token?redirect_uri=https%3A%2F%2Febenezer.herokuapp.com%2FVivo&client_id=500102691353311&client_secret=de6da569969ab8ef4e700be28cf78a9a&code=" +
       userCode;
     fetch(tokenUrl)
       .then((response) => response.json())
@@ -47,7 +47,7 @@ export default function FacebookVideosPage() {
         <button
           onClick={() => {
             window.location.href =
-              "https://facebook.com/v10.0/dialog/oauth?client_id=500102691353311&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2FVivo&state=23443";
+              "https://facebook.com/v10.0/dialog/oauth?client_id=500102691353311&redirect_uri=https%3A%2F%2Febenezer.herokuapp.com%2FVivo&state=23443";
           }}
         >
           Click
