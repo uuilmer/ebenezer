@@ -3,12 +3,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import HomePage from "./HomePage";
+import FacebookVideosPage from "./FacebookVideosPage";
 
 const PAGE_NAMES = ["Casa", "Calendario", "Vivo", "Contactenos"];
 const PAGES = new Map([
   ["Casa", <HomePage />],
   ["Calendario", null],
-  ["Vivo", null],
+  ["Vivo", <FacebookVideosPage />],
   ["Contactenos", null],
 ]);
 

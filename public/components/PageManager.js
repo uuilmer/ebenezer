@@ -13,6 +13,8 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _HomePage = _interopRequireDefault(require("./HomePage"));
 
+var _FacebookVideosPage = _interopRequireDefault(require("./FacebookVideosPage"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38,7 +40,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var PAGE_NAMES = ["Casa", "Calendario", "Vivo", "Contactenos"];
-var PAGES = new Map([["Casa", /*#__PURE__*/_react["default"].createElement(_HomePage["default"], null)], ["Calendario", null], ["Vivo", null], ["Contactenos", null]]);
+var PAGES = new Map([["Casa", /*#__PURE__*/_react["default"].createElement(_HomePage["default"], null)], ["Calendario", null], ["Vivo", /*#__PURE__*/_react["default"].createElement(_FacebookVideosPage["default"], null)], ["Contactenos", null]]);
 
 var PageManager = /*#__PURE__*/function (_React$Component) {
   _inherits(PageManager, _React$Component);
