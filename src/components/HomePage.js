@@ -22,6 +22,7 @@ export default function HomePage() {
                 "Tomó luego Samuel una piedra y la puso entre Mizpa y Sen, y le
                 puso por nombre Eben-ezer"
               </h6>
+              // TODO: Add dynamic quotes
             </blockquote>
             <figcaption className="blockquote-footer">
               "1 Samuel 7:12"

@@ -39,7 +39,7 @@ function HomePage() {
     className: "blockquote"
   }, /*#__PURE__*/_react["default"].createElement("h6", {
     className: "display-6"
-  }, "\"Tom\xF3 luego Samuel una piedra y la puso entre Mizpa y Sen, y le puso por nombre Eben-ezer\"")), /*#__PURE__*/_react["default"].createElement("figcaption", {
+  }, "\"Tom\xF3 luego Samuel una piedra y la puso entre Mizpa y Sen, y le puso por nombre Eben-ezer\""), "// TODO: Add dynamic quotes"), /*#__PURE__*/_react["default"].createElement("figcaption", {
     className: "blockquote-footer"
   }, "\"1 Samuel 7:12\"")))));
 }

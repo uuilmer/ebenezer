@@ -3,20 +3,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import HomePage from "./HomePage";
-import FacebookVideosPage from "./FacebookVideosPage";
+import FacebookPageIcon from "./FacebookPageIcon";
+import EventsPage from "./EventsPage";
 
-const PAGE_NAMES = ["Casa", "Calendario", "Vivo", "Contactenos"];
+const PAGE_NAMES = ["Casa", "Eventos", "Contactenos"];
 const PAGES = new Map([
   ["Casa", <HomePage />],
-  ["Calendario", null],
-  ["Vivo", <FacebookVideosPage />],
+  ["Eventos", <EventsPage />],
   ["Contactenos", null],
 ]);
 
 type Props = {};
 
 type State = {
-  page: "Casa" | "Calendario" | "Vivo" | "Contactenos",
+  page: "Casa" | "Eventos" | "Contactenos",
 };
 
 export default class PageManager extends React.Component<Props, State> {
@@ -73,6 +73,7 @@ export default class PageManager extends React.Component<Props, State> {
                     );
                   })}
                 </ul>
+                <FacebookPageIcon />
               </div>
             </div>
           </nav>
