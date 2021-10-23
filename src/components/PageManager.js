@@ -3,10 +3,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import HomePage from "./HomePage";
-import FacebookPageIcon from "./FacebookPageIcon";
 import EventsPage from "./EventsPage";
+import EbenezerNav from "./EbenezerNav";
 
-const PAGE_NAMES = ["Casa", "Eventos", "Contactenos"];
 const PAGES = new Map([
   ["Casa", <HomePage />],
   ["Eventos", <EventsPage />],
@@ -16,70 +15,35 @@ const PAGES = new Map([
 type Props = {};
 
 type State = {
-  page: "Casa" | "Eventos" | "Contactenos",
+  currentTab: "Casa" | "Eventos" | "Contactenos",
 };
 
 export default class PageManager extends React.Component<Props, State> {
   state: State = {
-    page: "Casa",
+    currentTab: "Casa",
   };
+  
   constructor(props: Props) {
     super(props);
-    if (PAGE_NAMES.includes(window.location.pathname.split("/")[1])) {
+    // TODO: Try to handle the url in a more elegant way
+    if (PAGES.hasOwnProperty(window.location.pathname.split("/")[1])) {
       this.state = { page: window.location.pathname.split("/")[1] };
     } else {
       window.history.pushState("", "", "/Casa");
     }
   }
+
   render() {
-    var pageContent = PAGES.get(this.state.page);
+    var pageContent = PAGES.get(this.state.currentTab);
     return (
-      <div>
-        <div id="tab_manager">
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-            <div className="container-fluid">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
-                  {PAGE_NAMES.map((page, index) => {
-                    if (page == this.state.page) {
-                      var navclassName = "nav-link active";
-                    } else {
-                      var navclassName = "nav-link";
-                    }
-                    return (
-                      <li className="nav-item" key={page}>
-                        <a
-                          className={navclassName}
-                          href="#"
-                          onClick={() => {
-                            window.history.pushState("", "", "/" + page);
-                            this.setState({ page });
-                          }}
-                        >
-                          {page}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-                <FacebookPageIcon />
-              </div>
-            </div>
-          </nav>
-        </div>
+      <>
+        <EbenezerNav
+          currentTab={this.state.currentTab}
+          tabs={PAGES}
+          onChangeTab={(newTab) => this.setState({ currentTab: newTab })}
+        />
         {pageContent}
-      </div>
+      </>
     );
   }
 }

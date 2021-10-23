@@ -13,9 +13,9 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _HomePage = _interopRequireDefault(require("./HomePage"));
 
-var _FacebookPageIcon = _interopRequireDefault(require("./FacebookPageIcon"));
-
 var _EventsPage = _interopRequireDefault(require("./EventsPage"));
+
+var _EbenezerNav = _interopRequireDefault(require("./EbenezerNav"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -41,7 +41,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var PAGE_NAMES = ["Casa", "Eventos", "Contactenos"];
 var PAGES = new Map([["Casa", /*#__PURE__*/_react["default"].createElement(_HomePage["default"], null)], ["Eventos", /*#__PURE__*/_react["default"].createElement(_EventsPage["default"], null)], ["Contactenos", null]]);
 
 var PageManager = /*#__PURE__*/function (_React$Component) {
@@ -54,13 +53,13 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, PageManager);
 
-    _this = _super.call(this, props);
+    _this = _super.call(this, props); // TODO: Try to handle the url in a more elegant way
 
     _defineProperty(_assertThisInitialized(_this), "state", {
-      page: "Casa"
+      currentTab: "Casa"
     });
 
-    if (PAGE_NAMES.includes(window.location.pathname.split("/")[1])) {
+    if (PAGES.hasOwnProperty(window.location.pathname.split("/")[1])) {
       _this.state = {
         page: window.location.pathname.split("/")[1]
       };
@@ -76,50 +75,16 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var pageContent = PAGES.get(this.state.page);
-      return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
-        id: "tab_manager"
-      }, /*#__PURE__*/_react["default"].createElement("nav", {
-        className: "navbar navbar-expand-lg navbar-dark bg-dark py-3"
-      }, /*#__PURE__*/_react["default"].createElement("div", {
-        className: "container-fluid"
-      }, /*#__PURE__*/_react["default"].createElement("button", {
-        className: "navbar-toggler",
-        type: "button",
-        "data-bs-toggle": "collapse",
-        "data-bs-target": "#navbarNav",
-        "aria-controls": "navbarNav",
-        "aria-expanded": "false",
-        "aria-label": "Toggle navigation"
-      }, /*#__PURE__*/_react["default"].createElement("span", {
-        className: "navbar-toggler-icon"
-      })), /*#__PURE__*/_react["default"].createElement("div", {
-        className: "collapse navbar-collapse",
-        id: "navbarNav"
-      }, /*#__PURE__*/_react["default"].createElement("ul", {
-        className: "navbar-nav"
-      }, PAGE_NAMES.map(function (page, index) {
-        if (page == _this2.state.page) {
-          var navclassName = "nav-link active";
-        } else {
-          var navclassName = "nav-link";
+      var pageContent = PAGES.get(this.state.currentTab);
+      return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_EbenezerNav["default"], {
+        currentTab: this.state.currentTab,
+        tabs: PAGES,
+        onChangeTab: function onChangeTab(newTab) {
+          return _this2.setState({
+            currentTab: newTab
+          });
         }
-
-        return /*#__PURE__*/_react["default"].createElement("li", {
-          className: "nav-item",
-          key: page
-        }, /*#__PURE__*/_react["default"].createElement("a", {
-          className: navclassName,
-          href: "#",
-          onClick: function onClick() {
-            window.history.pushState("", "", "/" + page);
-
-            _this2.setState({
-              page: page
-            });
-          }
-        }, page));
-      })), /*#__PURE__*/_react["default"].createElement(_FacebookPageIcon["default"], null))))), pageContent);
+      }), pageContent);
     }
   }]);
 
