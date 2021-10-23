@@ -20,9 +20,14 @@ type State = {
 
 export default class PageManager extends React.Component<Props, State> {
   state: State = {
+    /*
+      TODO: Make the default page a global constant
+      and perhaps put all of the names from PAGES in
+      a Strings file for easy update: Improves EbenezerNav.js
+    */
     currentTab: "Casa",
   };
-  
+
   constructor(props: Props) {
     super(props);
     // TODO: Try to handle the url in a more elegant way

@@ -60,5 +60,12 @@ function EbenezerNav(props) {
         props.onChangeTab(tabName);
       }
     }, tabName));
-  })), /*#__PURE__*/_react["default"].createElement(_FacebookPageIcon["default"], null)))));
+  })), /*#__PURE__*/_react["default"].createElement(_FacebookPageIcon["default"], null))), props.currentTab != "Casa" && /*#__PURE__*/_react["default"].createElement("img", {
+    id: "nav_logo",
+    src: "../media/ebenezer_logo.png",
+    type: "img/png",
+    style: {
+      width: "10vw"
+    }
+  })));
 }

@@ -49,6 +49,14 @@ export default function EbenezerNav(props) {
             <FacebookPageIcon />
           </div>
         </div>
+        {props.currentTab != "Casa" && (
+          <img
+            id="nav_logo"
+            src="../media/ebenezer_logo.png"
+            type="img/png"
+            style={{ width: "10vw" }}
+          />
+        )}
       </nav>
     </div>
   );
