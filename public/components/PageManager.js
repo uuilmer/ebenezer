@@ -56,6 +56,11 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props); // TODO: Try to handle the url in a more elegant way
 
     _defineProperty(_assertThisInitialized(_this), "state", {
+      /*
+        TODO: Make the default page a global constant
+        and perhaps put all of the names from PAGES in
+        a Strings file for easy update: Improves EbenezerNav.js
+      */
       currentTab: "Casa"
     });
 

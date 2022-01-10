@@ -54,7 +54,7 @@ export default function EbenezerNav(props) {
             id="nav_logo"
             src="../media/ebenezer_logo.png"
             type="img/png"
-            style={{ width: "10vw" }}
+            style={{ width: "4vw" }}
           />
         )}
       </nav>

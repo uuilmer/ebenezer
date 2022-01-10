@@ -1,0 +1,67 @@
+/*
+    Commonly used CSS Styles.
+
+    Last edit: 1/4/2022 @wilmer
+*/
+
+/* Center a React Component */
+.center-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Set element's width as half of parent */
+.half-parent-width {
+  width: 50%;
+}
+
+/* Set element's width as whole of parent */
+.full-parent-width {
+  width: 100%;
+}
+
+/* Align children in element */
+.center-children {
+  display: flex;
+  align-items: center;
+}
+
+/* Set element's height as the entire Viewport Height */
+.cover-vh {
+  height: 100vh;
+}
+
+/* Set elemnt's position to fixed */
+.position-fixed {
+  position: fixed;
+}
+
+/* Allow element to be scrollable in the Y direction */
+.scrollable {
+  overflow: scroll;
+}
+
+/* Set element's height as half of parent */
+.half-parent-height {
+  height: 50%;
+}
+
+/* Set element's height as whole of parent */
+.full-parent-height {
+  height: 100%;
+}
+
+/* Add a fading top and bottom effect to element */
+/* .fading-ends {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.8)
+  );
+  z-index: 10;
+} */

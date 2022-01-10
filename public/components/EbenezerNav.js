@@ -65,7 +65,7 @@ function EbenezerNav(props) {
     src: "../media/ebenezer_logo.png",
     type: "img/png",
     style: {
-      width: "10vw"
+      width: "4vw"
     }
   })));
 }
