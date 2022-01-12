@@ -5,15 +5,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = EventsPage;
+exports["default"] = DynamicElementFocusManager;
 
 var _react = _interopRequireWildcard(require("react"));
-
-var _EbenezerTimeline = _interopRequireDefault(require("./EbenezerTimeline"));
-
-var _DynamicElementFocusManager = _interopRequireDefault(require("./DynamicElementFocusManager"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -31,34 +25,32 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function EventsPage() {
-  var _useState = (0, _react.useState)(new Date()),
-      _useState2 = _slicedToArray(_useState, 2),
-      date = _useState2[0],
-      onNewDate = _useState2[1]; // https://developers.facebook.com/docs/plugins/page-plugin/
-  // TODO: The Facebook iframe seems to not appear on Safari
+function DynamicElementFocusManager(props) {
+  var shrink = "0% { width: 50%; } 100% { width: 25%; }";
+  var enlarge = "0% { width: 25%; } 100% { width: 50%; }";
 
+  var _useState = (0, _react.useState)(null),
+      _useState2 = _slicedToArray(_useState, 2),
+      style = _useState2[0],
+      setStyleChange = _useState2[1];
 
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "cover-vh enlargable-container"
+    id: "events_container",
+    className: "cover-vh"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "half-parent-width center-children enlargable-container-component-a"
-  }, /*#__PURE__*/_react["default"].createElement("iframe", {
-    src: "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId",
-    style: {
-      border: "none",
-      overflow: "hidden",
-      display: "block",
-      marginLeft: "auto",
-      marginRight: "auto"
+    className: "full-parent-height full-parent-width",
+    style: style,
+    onMouseEnter: function onMouseEnter() {
+      setStyleChange({
+        animation: enlarge + " 2s linear"
+      });
     },
-    height: 500,
-    width: 340,
-    scrolling: "no",
-    frameBorder: "0",
-    allowFullScreen: true,
-    allow: "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-  })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "half-parent-width scrollable enlargable-container-component-b"
-  }, /*#__PURE__*/_react["default"].createElement(_EbenezerTimeline["default"], null)));
+    onMouseLeave: function onMouseLeave() {
+      setStyleChange({
+        animation: shrink + " 2s linear"
+      });
+    }
+  }, props.leftChild), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "full-parent-height full-parent-width"
+  }, props.rightChild));
 }

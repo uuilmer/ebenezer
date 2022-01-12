@@ -1,3 +1,6 @@
+"use strict";
+// @flow
+
 import React from "react";
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";

@@ -37,6 +37,11 @@
   position: fixed;
 }
 
+/* Set property display to flex */
+.display-flex {
+  display: flex;
+}
+
 /* Allow element to be scrollable in the Y direction */
 .scrollable {
   overflow: scroll;

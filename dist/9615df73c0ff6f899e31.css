@@ -4,8 +4,6 @@
     Last edit: 1/4/2022 @wilmer
 */
 
-/* Styling for Dynamic zooming in on two components */
-/* BEGIN */
 .enlargable-container {
   display: flex;
 }
@@ -33,4 +31,3 @@
 .enlargable-container-component-b:hover + .enlargable-container-component-a {
   width: 30%;
 }
-/* END */
