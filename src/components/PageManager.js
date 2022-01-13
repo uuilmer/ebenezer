@@ -47,7 +47,7 @@ export default class PageManager extends React.Component<Props, State> {
           tabs={PAGES}
           onChangeTab={(newTab) => this.setState({ currentTab: newTab })}
         />
-        {pageContent}
+        <div id="page-content-container">{pageContent}</div>
       </>
     );
   }

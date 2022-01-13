@@ -13,6 +13,8 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function HomePage() {
   // TODO: Add dynamic quotes
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("video", {
@@ -27,9 +29,9 @@ function HomePage() {
     id: "mobile_home_background",
     src: "../media/mobile_home_background.png",
     type: "img/png"
-  }), /*#__PURE__*/_react["default"].createElement("div", {
+  }), /*#__PURE__*/_react["default"].createElement("div", _defineProperty({
     className: "content"
-  }, /*#__PURE__*/_react["default"].createElement("h1", {
+  }, "className", "full-parent-height"), /*#__PURE__*/_react["default"].createElement("h1", {
     className: "display-1",
     id: "church_name"
   }, "\"Iglesia de Dios Ebenezer\""), /*#__PURE__*/_react["default"].createElement("div", {

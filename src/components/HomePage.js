@@ -12,7 +12,7 @@ export default function HomePage() {
         src="../media/mobile_home_background.png"
         type="img/png"
       />
-      <div className="content">
+      <div className="content" className="full-parent-height">
         <h1 className="display-1" id="church_name">
           "Iglesia de Dios Ebenezer"
         </h1>

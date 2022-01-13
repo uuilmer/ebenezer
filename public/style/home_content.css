@@ -4,13 +4,16 @@
     Last edit: 1/4/2022 @wilmer
 */
 
+/* Title text of home Page */
 #church_name {
-  margin-top: 30vh;
-  margin-bottom: 30vh;
+  width: 100%;
   text-align: center;
   font-weight: 900;
+  position: absolute;
+  top: 0;
 }
 
+/* Bottom text of home Page */
 #home_intro {
   background-image: linear-gradient(
     to bottom,
@@ -19,7 +22,17 @@
     rgba(33, 37, 41, 1),
     rgba(33, 37, 41, 1)
   );
-  padding: 10vw;
+  position: absolute;
+  bottom: 0;
+  padding: 5vw;
+}
+
+/* Styling for the page contents to be displayed */
+#page-content-container {
+  height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+  position: absolute;
 }
 
 * {

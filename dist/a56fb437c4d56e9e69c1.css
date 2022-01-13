@@ -42,6 +42,11 @@
   display: flex;
 }
 
+/* Set property flex-direction to column */
+.flex-vertical {
+  flex-direction: column;
+}
+
 /* Allow element to be scrollable in the Y direction */
 .scrollable {
   overflow: scroll;

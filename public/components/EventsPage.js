@@ -11,8 +11,6 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _EbenezerTimeline = _interopRequireDefault(require("./EbenezerTimeline"));
 
-var _DynamicElementFocusManager = _interopRequireDefault(require("./DynamicElementFocusManager"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -40,7 +38,7 @@ function EventsPage() {
 
 
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "cover-vh enlargable-container"
+    className: "full-parent-height enlargable-container"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "half-parent-width center-children enlargable-container-component-a"
   }, /*#__PURE__*/_react["default"].createElement("iframe", {

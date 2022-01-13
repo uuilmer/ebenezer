@@ -5,8 +5,9 @@
 */
 
 #church_name {
-  margin-top: 30vh;
-  margin-bottom: 30vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
   text-align: center;
   font-weight: 900;
 }
@@ -19,7 +20,16 @@
     rgba(33, 37, 41, 1),
     rgba(33, 37, 41, 1)
   );
-  padding: 10vw;
+  position: absolute;
+  bottom: 0;
+  padding: 5vw;
+}
+
+#page-content-container {
+  height: 90vh;
+  width: 100%;
+  margin-top: 10vh;
+  position: absolute;
 }
 
 * {

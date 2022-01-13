@@ -89,7 +89,9 @@ var PageManager = /*#__PURE__*/function (_React$Component) {
             currentTab: newTab
           });
         }
-      }), pageContent);
+      }), /*#__PURE__*/_react["default"].createElement("div", {
+        id: "page-content-container"
+      }, pageContent));
     }
   }]);
 
