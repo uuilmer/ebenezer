@@ -1,0 +1,23 @@
+/*
+    Page Content CSS Styles.
+
+    Last edit: 1/4/2022 @wilmer
+*/
+
+/* Styling for the Top Nav Bar */
+#tab_manager {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Styling for the page contents to be displayed */
+#page-content-container {
+  height: 90vh;
+  margin-top: 10vh;
+}
+
+* {
+  font-family: "Bodoni Moda", serif;
+}

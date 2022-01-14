@@ -1,0 +1,66 @@
+/*
+    Home Page CSS Styles.
+
+    Last edit: 1/4/2022 @wilmer
+*/
+
+#home_page_container {
+  height: 140%;
+  position: relative;
+}
+
+/* Bottom text of home Page */
+#home_intro {
+  position: absolute;
+  bottom: 0;
+  padding: 5vw;
+}
+
+/*
+  Code for Dynamic Home Page Title
+  Adapted from: https://www.sliderrevolution.com/resources/css-text-animation/
+  Animation: Cross Color Text Reveal
+  Developer: Kenny
+*/
+
+/* BEGIN */
+#home-image {
+  background-image: url("../media/home_page_background.jpg");
+}
+
+.outer-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20vh 0vw;
+  width: 90%;
+  position: relative;
+}
+.image-container {
+  padding-bottom: 100%;
+  background: black;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+}
+.section-title {
+  margin: 0;
+  font-size: 64px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translateY(-50%);
+  z-index: 1;
+  white-space: nowrap;
+}
+.section-title.on-dark {
+  color: white;
+}
+.section-title span {
+  position: relative;
+  display: block;
+}
+/* END */
